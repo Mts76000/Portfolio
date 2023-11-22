@@ -1,0 +1,34 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --vert: #4f805d;
+    --vertclair:#8bb092;
+    --gris: #ddd;
+    --blanc: #fff;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul,ol{
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    vertical-align:bottom ;
+}
+
+body{
+    background-color: var(--vertclair);
+    color:var(--blanc);
+}
