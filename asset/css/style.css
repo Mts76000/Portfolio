@@ -31,4 +31,6 @@ img {
 body{
     background-color: var(--vertclair);
     color:var(--blanc);
+    font-family: 'Nunito', sans-serif;
 }
+
