@@ -44,6 +44,11 @@ body{
 
 }
 
+body.no-scroll {
+    overflow: hidden;
+}
+
+
 .wrap{
     max-width: 1920px;
     width: 100%;
@@ -143,6 +148,10 @@ body{
 
 #header.active .left .special-link-black:hover{
     background: none;
+}
+
+#header.active .burger-icon{
+    color: black;
 }
 /* light mode */
 
@@ -644,12 +653,9 @@ nav.nav-menu{
     font-size: 36px;
 }
 
-.burger-icon span {
+.burger-icon  {
     display: none;
-    width: 35px;
-    height: 5px;
-    background-color: white;
-    margin: 6px 0;
+
 }
 
 .switch-container {
@@ -674,7 +680,7 @@ nav.nav-menu{
         display: flex;
     }
 
-    .burger-icon span{
+    .burger-icon {
         display: block;
     }
 

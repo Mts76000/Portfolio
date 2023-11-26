@@ -99,19 +99,37 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-var sidenav = document.getElementById("mySidenav");
-var openBtn = document.getElementById("openBtn");
-var closeBtn = document.getElementById("closeBtn");
+document.addEventListener("DOMContentLoaded", function () {
+    const openBtns = document.querySelectorAll('.openBtn');
+    const closeBtns = document.querySelectorAll('.closeBtn');
+    const sidenav = document.querySelector('#mySidenav');
+    const body = document.querySelector('body');
 
-openBtn.onclick = openNav;
-closeBtn.onclick = closeNav;
+    openBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            sidenav.classList.add('active');
+            body.classList.add('no-scroll'); // Ajouter la classe pour désactiver le défilement
+        });
+    });
 
-/* Set the width of the side navigation to 250px */
-function openNav() {
-    sidenav.classList.add("active");
-}
+    closeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            sidenav.classList.remove('active');
+            body.classList.remove('no-scroll'); // Retirer la classe pour réactiver le défilement
+        });
+    });
 
-/* Set the width of the side navigation to 0 */
-function closeNav() {
-    sidenav.classList.remove("active");
-}
+    // Fermer le menu lorsqu'un lien est cliqué
+    const navLinks = document.querySelectorAll('.sidenav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            sidenav.classList.remove('active');
+            body.classList.remove('no-scroll'); // Retirer la classe pour réactiver le défilement
+        });
+    });
+});
+
+
+
+
+

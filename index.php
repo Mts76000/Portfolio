@@ -25,8 +25,8 @@
                 <h1>Mts</h1>
             </div>
 
-            <div id="mySidenav" class="sidenav">
-                <a id="closeBtn" href="#" class="close">×</a>
+            <div id="mySidenav" class="sidenav ">
+                <a class="closeBtn"  class="close">×</a>
                 <ul>
                     <li><a href="#header"><i class="fa-solid fa-house"></i> Home</a></li>
                     <li><a href="#info"><i class="fa-solid fa-circle-info"></i> Abouts</a></li>
@@ -35,23 +35,21 @@
 
                 </ul>
                 <div class="switch-container">
-                <label class="switch switch-burger">
-                    <input type="checkbox" />
-                    <span>
+                    <label class="switch switch-burger">
+                        <input type="checkbox" />
+                        <span>
                     <div class="icon-container">
                     <i class="fas fa-moon"></i> <!-- Icône de la lune -->
                         <i class="fas fa-sun"></i> <!-- Icône du soleil -->
                 </div>
                 </span>
-                </label>
-            </div>
+                    </label>
+                </div>
             </div>
 
-            <a href="#" id="openBtn">
+            <a class="openBtn">
   <span class="burger-icon">
-    <span></span>
-    <span></span>
-    <span></span>
+   <i class="fa-solid fa-bars"></i>
   </span>
             </a>
 
@@ -85,7 +83,7 @@
                     <h2>I’m Mathis Lamotte a</h2>
                     <h2>Web <span id="changement" class="text-gray">developer</span>  👋🏻</h2>
                 </div>
-                    <a class="intro-bouton" data-aos="fade-up"  data-aos-duration="2000" href="#info">See More</a>
+                <a class="intro-bouton" data-aos="fade-up"  data-aos-duration="2000" href="#info">See More</a>
             </div>
         </div>
     </div>
@@ -96,9 +94,9 @@
             </div>
 
             <ul class="social-icons">
-                <li class="rond"><a href=""><i class="fa-brands fa-github"></i></a></li>
-                <li class="rond"><a href=""><i class="fa-brands fa-instagram"></i></a></li>
-                <li class="rond"><a href=""><i class="fa-brands fa-linkedin-in"></i></a></li>
+                <li class="rond"><a href="https://github.com/Mts76000" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+                <li class="rond"><a href="" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                <li class="rond"><a href="https://www.linkedin.com/in/mathis-lamotte-a386a6264/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
             </ul>
 
         </div>
@@ -110,6 +108,35 @@
 
         <div class="nav">
             <div class="logo"><h1>Mts</h1></div>
+
+            <div id="mySidenav" class="sidenav ">
+                <a class="closeBtn" href="#" class="close">×</a>
+                <ul>
+                    <li><a href="#header"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="#info"><i class="fa-solid fa-circle-info"></i> Abouts</a></li>
+                    <li><a href="#work"><i class="fa-solid fa-code"></i> Works</a></li>
+                    <li><a href="#contact"> <i class="fa-solid fa-address-card"></i> Contact</a></li>
+
+                </ul>
+                <div class="switch-container">
+                    <label class="switch switch-burger">
+                        <input type="checkbox" />
+                        <span>
+                    <div class="icon-container">
+                    <i class="fas fa-moon"></i> <!-- Icône de la lune -->
+                        <i class="fas fa-sun"></i> <!-- Icône du soleil -->
+                </div>
+                </span>
+                    </label>
+                </div>
+            </div>
+
+            <a class="openBtn">
+  <span class="burger-icon">
+   <i class="fa-solid fa-bars"></i>
+  </span>
+            </a>
+
             <div class="nav-lien">
                 <nav class="nav-menu">
                     <ul>
@@ -159,6 +186,35 @@
 
         <div class="nav">
             <div class="logo"><h1>Mts</h1></div>
+
+            <div id="mySidenav" class="sidenav ">
+                <a class="closeBtn" href="#" class="close">×</a>
+                <ul>
+                    <li><a href="#header"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="#info"><i class="fa-solid fa-circle-info"></i> Abouts</a></li>
+                    <li><a href="#work"><i class="fa-solid fa-code"></i> Works</a></li>
+                    <li><a href="#contact"> <i class="fa-solid fa-address-card"></i> Contact</a></li>
+
+                </ul>
+                <div class="switch-container">
+                    <label class="switch switch-burger">
+                        <input type="checkbox" />
+                        <span>
+                    <div class="icon-container">
+                    <i class="fas fa-moon"></i> <!-- Icône de la lune -->
+                        <i class="fas fa-sun"></i> <!-- Icône du soleil -->
+                </div>
+                </span>
+                    </label>
+                </div>
+            </div>
+
+            <a class="openBtn">
+  <span class="burger-icon">
+    <i class="fa-solid fa-bars"></i>
+  </span>
+            </a>
+
             <div class="nav-lien">
                 <nav class="nav-menu">
                     <ul>
@@ -201,6 +257,35 @@
 
         <div class="nav">
             <div class="logo"><h1>Mts</h1></div>
+
+            <div id="mySidenav" class="sidenav ">
+                <a class="closeBtn" href="#" class="close">×</a>
+                <ul>
+                    <li><a href="#header"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="#info"><i class="fa-solid fa-circle-info"></i> Abouts</a></li>
+                    <li><a href="#work"><i class="fa-solid fa-code"></i> Works</a></li>
+                    <li><a href="#contact"> <i class="fa-solid fa-address-card"></i> Contact</a></li>
+
+                </ul>
+                <div class="switch-container">
+                    <label class="switch switch-burger">
+                        <input type="checkbox" />
+                        <span>
+                    <div class="icon-container">
+                    <i class="fas fa-moon"></i> <!-- Icône de la lune -->
+                        <i class="fas fa-sun"></i> <!-- Icône du soleil -->
+                </div>
+                </span>
+                    </label>
+                </div>
+            </div>
+
+            <a class="openBtn">
+  <span class="burger-icon">
+   <i class="fa-solid fa-bars"></i>
+  </span>
+            </a>
+
             <div class="nav-lien">
                 <nav class="nav-menu">
                     <ul>
