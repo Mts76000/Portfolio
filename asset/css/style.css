@@ -16,6 +16,7 @@
 
 html{
     scroll-behavior: smooth;
+
 }
 
 a{
@@ -38,7 +39,9 @@ body{
     background-color: var(--noirclair);
     color:var(--blanc);
     overflow-x : hidden;
+    overflow-y: hidden;
     margin: 0;
+
 }
 
 .wrap{
@@ -56,6 +59,7 @@ body{
     background-size: cover;
     background-position: center;
     height: 100vh;
+
 }
 
 #header.active .line{
@@ -105,6 +109,41 @@ body{
     color: var(--blanc);
 }
 
+
+#header.active .left .special-link-black {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    display: flex;
+    justify-items: center;
+}
+
+#header.active .left .special-link-white{
+    display: none;
+}
+
+#header.active .left .special-link-black:hover{
+    background: none;
+}
+
+
+#header.active .left .special-link-black {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    display: flex;
+    justify-items: center;
+}
+
+#header.active .left .special-link-white{
+    display: none;
+}
+
+#header.active .left .special-link-black:hover{
+    background: none;
+}
 /* light mode */
 
 /* Bar de navigation  */
@@ -125,7 +164,7 @@ body{
 
 .nav .logo h1:hover{
         color: var(--gris);
-        transition: 0.5s;
+        transition: color 0.5s ease-in-out;
 }
 
 
@@ -167,6 +206,7 @@ nav.nav-menu{
 #header a[href="#contact"]:hover {
     color: var(--gris);
     transition: 0.5s;
+    transform: scale(1.2);
 }
 
 #info a[href="#info"] {
@@ -184,6 +224,7 @@ nav.nav-menu{
 #info a[href="#contact"]:hover {
     color: var(--gris);
     transition: 0.5s;
+    transform: scale(1.2);
 }
 
 
@@ -202,6 +243,7 @@ nav.nav-menu{
 #work a[href="#contact"]:hover {
     color: var(--gris);
     transition: 0.5s;
+    transform: scale(1.2);
 }
 
 #contact a[href="#contact"] {
@@ -219,7 +261,16 @@ nav.nav-menu{
 #contact a[href="#work"]:hover {
     color: var(--gris);
     transition: 0.5s;
+    transform: scale(1.2);
 }
+
+.nav-menu a {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+
 
 .switch {
     display: inline-block;
@@ -300,7 +351,7 @@ nav.nav-menu{
     position: absolute;
     bottom: 10px;
     width: 100%;
-    z-index: 999;
+    z-index: 998;
 }
 
 .end {
@@ -389,7 +440,7 @@ nav.nav-menu{
     transition: background-color 0.5s, color 0.5s, transform 0.5s ease-in-out;
 }
 
-#header .left a:hover {
+#header .left  a:hover {
     background-color: var(--blanc);
     color: black ;
     transform: scale(1.2);
@@ -400,6 +451,59 @@ nav.nav-menu{
    display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#header .left img{
+    width: 75%;
+}
+
+#header .down{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 30px;
+    z-index: 999;
+}
+
+#header .special-link-black{
+    display: none;
+}
+
+#header .left .special-link {
+   margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+
+}
+
+#header .left .special-link-black {
+   margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    display: none;
+}
+
+
+#header .left .special-link:hover {
+    background: none;
+    transform: scale(1.2);
+}
+
+#header .left .special-link-black:hover{
+    background: none;
+    transform: scale(1.2);
+}
+
+
+
+#header .left h3{
+    margin-top: 1rem;
+    font-size: 32px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
 }
 
 
@@ -437,9 +541,35 @@ nav.nav-menu{
     opacity: 0;
 }
 
+.notification {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 35%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    display: none;
+    opacity: 0;
 
+}
 
+.notification.visible {
+    display: block;
+    opacity: 1;
+}
 
+.notification p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.notification i {
+    font-size: 24px;
+}
 
 
 

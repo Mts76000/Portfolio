@@ -35,6 +35,68 @@ function toggleMode() {
         iconContainer.innerHTML = '<i class="fas fa-sun"></i>';
     }
 }
+document.addEventListener('DOMContentLoaded', function () {
+    document.body.focus();
+    AOS.init({
+        once: true,
+        // ... autres options AOS si nécessaire
+    });
+
+    var notification = document.getElementById('notification');
+
+    setTimeout(function () {
+        notification.classList.add('visible');
+    }, 1000);
+
+    setTimeout(function () {
+        notification.classList.remove('visible');
+    }, 7500);
+
+    // Gestionnaire d'événements pour les touches du clavier
+    document.addEventListener('keydown', function (event) {
+        // Détermine quelle touche a été pressée
+        switch (event.key) {
+            case 'ArrowUp':
+                // Défilement vers le haut ou autre logique pour la section précédente
+                window.location.href = '#header';
+                break;
+            case 'ArrowDown':
+                // Défilement vers le bas ou autre logique pour la section suivante
+                window.location.href = '#info';
+                break;
+            // Ajoutez des cas pour d'autres touches si nécessaire
+        }
+    });
+
+    // Gestionnaire d'événements pour les changements de section
+    document.addEventListener('scroll', function () {
+        var currentSection = getCurrentSection();
+        if (currentSection === 'header' || currentSection === 'info') {
+            notification.classList.remove('visible');
+        } else {
+            notification.classList.add('visible');
+        }
+    });
+
+    // Fonction pour obtenir la section actuelle
+    function getCurrentSection() {
+        var sections = document.querySelectorAll('section');
+        var currentSection = 'header';
+        var threshold = window.innerHeight / 2;
+
+        sections.forEach(function (section) {
+            var rect = section.getBoundingClientRect();
+            if (rect.top <= threshold && rect.bottom >= threshold) {
+                currentSection = section.id;
+            }
+        });
+
+        return currentSection;
+    }
+});
+
+
+
 
 
 
