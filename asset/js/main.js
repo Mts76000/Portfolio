@@ -16,12 +16,15 @@ spanElement.addEventListener('mouseout', function () {
     }, 300); // Ajustez la durée de la transition ici
 });
 
-let switchToggle = document.querySelector(".switch");
+let switchToggles = document.querySelectorAll(".switch");
 let header = document.querySelector("#header");
 
-switchToggle.addEventListener("change", function () {
-    header.classList.toggle("active");
+switchToggles.forEach(function (switchToggle) {
+    switchToggle.addEventListener("change", function () {
+        header.classList.toggle("active");
+    });
 });
+
 
 function toggleMode() {
     var modeSwitch = document.getElementById('modeSwitch');
@@ -96,7 +99,19 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+var sidenav = document.getElementById("mySidenav");
+var openBtn = document.getElementById("openBtn");
+var closeBtn = document.getElementById("closeBtn");
 
+openBtn.onclick = openNav;
+closeBtn.onclick = closeNav;
 
+/* Set the width of the side navigation to 250px */
+function openNav() {
+    sidenav.classList.add("active");
+}
 
-
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+    sidenav.classList.remove("active");
+}
