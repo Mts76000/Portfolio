@@ -17,13 +17,16 @@ spanElement.addEventListener('mouseout', function () {
 });
 
 let switchToggles = document.querySelectorAll(".switch");
-let header = document.querySelector("#header");
+let sections = document.querySelectorAll(".section"); // Ajoutez la classe .section à toutes les sections que vous souhaitez affecter
 
 switchToggles.forEach(function (switchToggle) {
     switchToggle.addEventListener("change", function () {
-        header.classList.toggle("active");
+        sections.forEach(function (section) {
+            section.classList.toggle("active");
+        });
     });
 });
+
 
 
 function toggleMode() {
@@ -55,21 +58,31 @@ document.addEventListener('DOMContentLoaded', function () {
         notification.classList.remove('visible');
     }, 7500);
 
-    // Gestionnaire d'événements pour les touches du clavier
+    let currentSectionIndex = 0;
+    const numberOfSections = 5;
+
     document.addEventListener('keydown', function (event) {
-        // Détermine quelle touche a été pressée
-        switch (event.key) {
-            case 'ArrowUp':
-                // Défilement vers le haut ou autre logique pour la section précédente
-                window.location.href = '#header';
-                break;
-            case 'ArrowDown':
-                // Défilement vers le bas ou autre logique pour la section suivante
-                window.location.href = '#info';
-                break;
-            // Ajoutez des cas pour d'autres touches si nécessaire
+        const isFormElement = document.activeElement.tagName.toLowerCase() === 'input' ||
+            document.activeElement.tagName.toLowerCase() === 'textarea';
+
+        if (!isFormElement) {
+            switch (event.key) {
+                case 'ArrowUp':
+                    currentSectionIndex = Math.max(0, currentSectionIndex - 1);
+                    break;
+                case 'ArrowDown':
+                    currentSectionIndex = Math.min(currentSectionIndex + 1, numberOfSections - 1);
+                    break;
+                case 'Enter':
+                    window.location.href = '#footer';
+                    break;
+            }
+
+            const sectionIds = ['#header', '#info', '#work', '#contact', '#footer'];
+            window.location.href = sectionIds[currentSectionIndex];
         }
     });
+
 
     // Gestionnaire d'événements pour les changements de section
     document.addEventListener('scroll', function () {
@@ -130,6 +143,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
-
+$(window).on('load',function() {
+    $('#diaporama1').flexslider({
+        animation: "slide",
+        controlNav: false,
+        directionNav: true,
+    });
+});
 
