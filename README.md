@@ -11,6 +11,7 @@ L'objectif principal de ce portfolio est de servir de point de départ dans ma c
 - HTML5
 - CSS3
 - JavaScript
+- PHP
 
 ## Comment accéder au portfolio 🌐
 
