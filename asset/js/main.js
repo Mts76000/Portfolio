@@ -16,6 +16,7 @@ spanElement.addEventListener('mouseout', function () {
     }, 300); // Ajustez la durée de la transition ici
 });
 
+// Toggle pour les sections
 let switchToggles = document.querySelectorAll(".switch");
 let sections = document.querySelectorAll(".section"); // Ajoutez la classe .section à toutes les sections que vous souhaitez affecter
 
@@ -24,15 +25,18 @@ switchToggles.forEach(function (switchToggle) {
         sections.forEach(function (section) {
             section.classList.toggle("active");
         });
+        // Retirer la notification lorsqu'on change de section
+        var notification = document.getElementById('notification');
+        notification.classList.remove('visible');
     });
 });
 
-
-
+// Fonction pour basculer le mode sombre/clair
 function toggleMode() {
     var modeSwitch = document.getElementById('modeSwitch');
     var iconContainer = document.querySelector('.icon-container');
 
+    // Mettez à jour l'icône pour tous les modes
     if (modeSwitch.checked) {
         // Mode sombre, utilisez l'icône de la lune
         iconContainer.innerHTML = '<i class="fas fa-moon"></i>';
@@ -40,7 +44,20 @@ function toggleMode() {
         // Mode clair, utilisez l'icône du soleil
         iconContainer.innerHTML = '<i class="fas fa-sun"></i>';
     }
+
+    // Mettez à jour l'état de tous les bascules en fonction du mode actuel
+    let switchToggles = document.querySelectorAll(".switch");
+    switchToggles.forEach(function (switchToggle) {
+        switchToggle.checked = modeSwitch.checked;
+    });
 }
+
+// Ajoutez un gestionnaire d'événements pour le changement de mode
+var modeSwitch = document.getElementById('modeSwitch');
+modeSwitch.addEventListener('change', toggleMode);
+
+
+// Initialisation après le chargement du document
 document.addEventListener('DOMContentLoaded', function () {
     document.body.focus();
     AOS.init({
@@ -57,6 +74,16 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(function () {
         notification.classList.remove('visible');
     }, 7500);
+
+    // Gestionnaire d'événements pour les changements de section
+    document.addEventListener('scroll', function () {
+        var currentSection = getCurrentSection();
+        if (currentSection === 'header' || currentSection === 'info' || currentSection === 'work' || currentSection === 'contact') {
+            notification.classList.remove('visible');
+        } else {
+            notification.classList.add('visible');
+        }
+    });
 
     let currentSectionIndex = 0;
     const numberOfSections = 5;
@@ -83,17 +110,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-
-    // Gestionnaire d'événements pour les changements de section
-    document.addEventListener('scroll', function () {
-        var currentSection = getCurrentSection();
-        if (currentSection === 'header' || currentSection === 'info') {
-            notification.classList.remove('visible');
-        } else {
-            notification.classList.add('visible');
-        }
-    });
-
     // Fonction pour obtenir la section actuelle
     function getCurrentSection() {
         var sections = document.querySelectorAll('section');
@@ -110,7 +126,6 @@ document.addEventListener('DOMContentLoaded', function () {
         return currentSection;
     }
 });
-
 
 document.addEventListener("DOMContentLoaded", function () {
     const openBtns = document.querySelectorAll('.openBtn');
@@ -141,13 +156,3 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
-
-
-$(window).on('load',function() {
-    $('#diaporama1').flexslider({
-        animation: "slide",
-        controlNav: false,
-        directionNav: true,
-    });
-});
-
