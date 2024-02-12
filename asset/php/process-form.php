@@ -17,14 +17,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->isSMTP();
         $mail->Host = 'ssl0.ovh.net';
         $mail->SMTPAuth = true;
-        $mail->Username = 'contact@mathis-lamotte.com';
-        $mail->Password = 'Olamotte05@';
+        $mail->Username = 'email';
+        $mail->Password = 'pass';
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
 
         // Destinataire
         $mail->setFrom($email, $name);
-        $mail->addAddress('contact@mathis-lamotte.com');
+        $mail->addAddress('email');
 
         // Contenu du message
         $mail->isHTML(false);
