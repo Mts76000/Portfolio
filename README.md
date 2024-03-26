@@ -12,7 +12,6 @@ L'objectif principal de ce portfolio est de servir de point de départ dans ma c
 - CSS3
 - JavaScript
 - PHP
-- Wordpress
 
 ---
 © 2023 Mathis Lamotte. Tous droits réservés.
